@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Book Library — Categories</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="./index.html">📚 Book Library</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link active" href="./categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="./authors.html">Authors</a></li>
+          <li class="nav-item"><a class="nav-link" href="./book-details.html">Book Details</a></li>
+          <li class="nav-item"><a class="nav-link" href="./favorites.html">Favorites ♥</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ CATEGORIES HERO ============ -->
+  <header class="hero-section">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <!-- Left / Visual Column -->
+        <div class="col-lg-6 order-lg-1 order-2">
+          <div class="hero-visual cat-hero-visual">
+            <div class="hero-arch"></div>
+            <div class="cat-floating-badges">
+              <div class="cat-float-card cat-float-card-a">
+                <span class="cat-float-icon" id="floatIconA">🎨</span>
+                <span class="cat-float-label" id="floatLabelA">Fiction</span>
+              </div>
+              <div class="cat-float-card cat-float-card-b">
+                <span class="cat-float-icon" id="floatIconB">🔬</span>
+                <span class="cat-float-label" id="floatLabelB">Science</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right / Text Column -->
+        <div class="col-lg-6 order-lg-2 order-1">
+          <h1 class="hero-title">Explore Books by Category</h1>
+          <p class="hero-text">
+            Browse diverse genres from Science to Fiction, and find your next
+            read faster with a library organized the way readers actually think.
+          </p>
+
+          <form class="cat-search-bar" role="search" id="categorySearchForm">
+            <span class="cat-search-icon">🔍</span>
+            <input type="search" id="categorySearchInput" class="cat-search-input" placeholder="Search categories (e.g. Fantasy, History...)" aria-label="Search categories" />
+          </form>
+
+          <div class="hero-stats cat-hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Genres</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100K+</span>
+              <span class="stat-label">Titles</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">Daily</span>
+              <span class="stat-label">Updates</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ POPULAR CATEGORIES GRID ============ -->
+  <section class="section-block">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Popular Genres</h2>
+        <p>Pick a genre to see what's inside — your selection updates the shelf below.</p>
+      </div>
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3" id="categoriesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ BOOKS BY CATEGORY ============ -->
+  <section class="section-block category-books-section" id="categoryBooksSection">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="categoryBooksTitle">Books in Fiction</h2>
+        <p>Hand-picked titles from this genre, ready to add to your shelf.</p>
+      </div>
+      <div class="row g-4" id="categoryBooksRow"></div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 Online Book Library. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./books.html">Books</a></li>
+          <li><a href="./categories.html">Categories</a></li>
+          <li><a href="./authors.html">Authors</a></li>
+          <li><a href="./book-details.html">Book Details</a></li>
+          <li><a href="./favorites.html">Favorites</a></li>
+        </ul>
+        <p class="footer-credit">Online Book Library &mdash; Powered by Google Books API</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+   <script src="js/main.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/categories.js"></script>
+</body>
+</html>
